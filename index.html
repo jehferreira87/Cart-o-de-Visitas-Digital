@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cartão de visitas digital interativo para Desenvolvedor Web & Designer UI/UX" />
+  <meta name="theme-color" content="#6c5ce7" />
+  <title>Cartão de Visitas Digital - Desenvolvedor Web & UI/UX</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="theme-toggle">
+      <button id="btnDark" class="btn">🌙 Dark Mode</button>
+      <button id="btnLux" class="btn">✨ Lux Mode</button>
+    </div>
+
+    <div class="card-wrap">
+      <div class="card theme-dark" id="card">
+        <div class="card-inner">
+          <div class="left">
+            <div class="avatar">
+              <img id="avatarImg" src="image/fotoperfil.jpg" alt="Foto do Desenvolvedor Jefferson Gonçalves" />
+            </div>
+
+            <div class="carousel">
+              <button class="prev" id="prevBtn" aria-label="Slide anterior">&#10094;</button>
+              <div class="slides" id="slides">
+                <div class="active">
+                  <img src="image/projeto1.jpg" alt="Portfólio - projeto 1" />
+                </div>
+                <div>
+                  <img src="image/projeto2.jpg" alt="Portfólio - projeto 2" />
+                </div>
+                <div>
+                  <img src="image/projeto3.jpg" alt="Portfólio - projeto 3" />
+                </div>
+              </div>
+              <button class="next" id="nextBtn" aria-label="Próximo slide">&#10095;</button>
+            </div>
+
+            <div class="qr">
+              <img id="qrImg" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://seusite.dev" alt="QR Code para acessar portfólio" />
+            </div>
+          </div>
+
+          <div class="right">
+            <h1 id="cardName">Jefferson Gonçalves</h1>
+            <p id="cardJob">Desenvolvedor Web &amp; Designer UI/UX</p>
+
+            <div class="contacts" id="contactLinks">
+              <a id="linkPhone" href="tel:+5511999999999" aria-label="Contato via WhatsApp">WhatsApp</a>
+              <a id="linkInsta" href="https://instagram.com/seuuser" aria-label="Perfil no Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a id="linkSite" href="https://seusite.dev" aria-label="Acessar portfólio" target="_blank" rel="noopener noreferrer">Portfólio</a>
+              <a id="linkLinkedin" href="https://linkedin.com/in/seuuser" aria-label="Perfil no LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+
+            <div class="actions">
+              <button class="btn" id="btnSaveImg" aria-label="Baixar cartão como imagem">📥 Baixar Card</button>
+              <button class="btn" id="btnShare" aria-label="Compartilhar cartão digital">📤 Compartilhar</button>
+            </div>
+
+            <form id="contactForm" action="https://formspree.io/f/mayvlpqq" method="POST">
+              <fieldset>
+                <legend style="display: none;">Formulário de Contato</legend>
+                <input type="text" name="nome" placeholder="Seu nome" required aria-label="Digite seu nome" />
+                <input type="email" name="email" placeholder="Seu email" required aria-label="Digite seu email" />
+                <textarea name="mensagem" placeholder="Sua mensagem" aria-label="Digite sua mensagem"></textarea>
+                <button type="submit">Enviar mensagem</button>
+              </fieldset>
+            </form>
+
+            <footer>
+              <p class="footer-note">Cartão Digital Interativo — Desenvolvedor Web &amp; UI/UX Designer</p>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

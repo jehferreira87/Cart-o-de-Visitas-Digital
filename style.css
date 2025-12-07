@@ -1,0 +1,430 @@
+/* style. css - Cartão Digital com Dark Mode e Lux Mode */
+
+:root {
+  --bg: #f0f0f5;
+  --card-bg: #ffffff;
+  --accent: #6c5ce7;
+  --text: #1b1b1b;
+  --muted: #6b6b6b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Arial', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #e0e0f0, #f5f5f5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  transition: background 0.5s ease;
+  color: var(--text);
+}
+
+.app {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.theme-toggle {
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.card-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 320px;
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px) rotateZ(1deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.card-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 3px solid var(--accent);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar:hover img {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f0f0f5;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.carousel .slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.35s ease, opacity 0.5s ease;
+  width: 100%;
+}
+
+.carousel .slides div {
+  flex: 0 0 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.3s ease;
+}
+
+.carousel .slides div.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0. 3);
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--accent);
+  border: none;
+  color: white;
+  font-size: 22px;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0. 8;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.carousel button:hover {
+  opacity: 1;
+  transform: scale(1. 1);
+}
+
+.carousel button:active {
+  transform: scale(0.95);
+}
+
+.prev {
+  left: 8px;
+}
+
+.next {
+  right: 8px;
+}
+
+.qr {
+  margin-top: 12px;
+  transition: all 0.3s ease;
+}
+
+.qr img {
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
+  border: 2px solid var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.qr img:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.right {
+  padding: 20px;
+  text-align: center;
+}
+
+.right h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.right h1:hover {
+  letter-spacing: 1px;
+}
+
+.right p {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contacts {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.contacts a {
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--accent);
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contacts a:hover,
+.contacts a:focus {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.85;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#contactForm fieldset {
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#contactForm input,
+#contactForm textarea,
+#contactForm button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  color: var(--text);
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(108, 92, 231, 0.2);
+}
+
+#contactForm textarea {
+  min-height: 80px;
+  resize: vertical;
+  max-height: 200px;
+}
+
+#contactForm button {
+  background: var(--accent);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+}
+
+#contactForm button:hover,
+#contactForm button:focus {
+  opacity: 0.9;
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+#contactForm button:active {
+  transform: scale(0.98);
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* TEMAS */
+.card.theme-dark {
+  --bg: #0f1724;
+  --card-bg: #1f1f2a;
+  --text: #e6eef8;
+  --muted: #9aa6b2;
+  --accent: #6c5ce7;
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+.card.theme-dark body {
+  background: linear-gradient(135deg, #0b1220, #071023);
+}
+
+.card.theme-lux {
+  --bg: #1f1f2a;
+  --card-bg: linear-gradient(135deg, #ffd700, #ff8c00);
+  --text: #fff;
+  --muted: #ddd;
+  --accent: gold;
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+.card.theme-lux body {
+  background: linear-gradient(135deg, #111010, #22201a);
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .card-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+
+  .right h1 {
+    font-size: 20px;
+  }
+
+  .carousel {
+    height: 120px;
+  }
+
+  .contacts a {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
