@@ -3,82 +3,1050 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Cartão de visitas digital interativo para Desenvolvedor Web & Designer UI/UX" />
+  <meta name="description" content="Jefferson Goncalves - Desenvolvedor Web & Designer UI/UX. Portfolio profissional com projetos de desenvolvimento web, design grafico e UI/UX." />
+  <meta name="keywords" content="desenvolvedor web, designer UI/UX, designer grafico, portfolio, frontend, Jefferson Goncalves" />
+  <meta name="author" content="Jefferson Goncalves" />
   <meta name="theme-color" content="#6c5ce7" />
-  <title>Cartão de Visitas Digital - Desenvolvedor Web & UI/UX</title>
+  <meta property="og:title" content="Jefferson Goncalves - Desenvolvedor Web & Designer UI/UX" />
+  <meta property="og:description" content="Portfolio profissional com projetos de desenvolvimento web, design grafico e UI/UX." />
+  <meta property="og:type" content="website" />
+  <title>Jefferson Goncalves - Desenvolvedor Web & Designer UI/UX</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- AOS - Animate On Scroll -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div class="app">
-    <div class="theme-toggle">
-      <button id="btnDark" class="btn">🌙 Dark Mode</button>
-      <button id="btnLux" class="btn">✨ Lux Mode</button>
-    </div>
+<body class="theme-dark">
 
-    <div class="card-wrap">
-      <div class="card theme-dark" id="card">
-        <div class="card-inner">
-          <div class="left">
-            <div class="avatar">
-              <img id="avatarImg" src="image/fotoperfil.jpg" alt="Foto do Desenvolvedor Jefferson Gonçalves" />
-            </div>
-
-            <div class="carousel">
-              <button class="prev" id="prevBtn" aria-label="Slide anterior">&#10094;</button>
-              <div class="slides" id="slides">
-                <div class="active">
-                  <img src="image/projeto1.jpg" alt="Portfólio - projeto 1" />
-                </div>
-                <div>
-                  <img src="image/projeto2.jpg" alt="Portfólio - projeto 2" />
-                </div>
-                <div>
-                  <img src="image/projeto3.jpg" alt="Portfólio - projeto 3" />
-                </div>
-              </div>
-              <button class="next" id="nextBtn" aria-label="Próximo slide">&#10095;</button>
-            </div>
-
-            <div class="qr">
-              <img id="qrImg" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://seusite.dev" alt="QR Code para acessar portfólio" />
-            </div>
-          </div>
-
-          <div class="right">
-            <h1 id="cardName">Jefferson Gonçalves</h1>
-            <p id="cardJob">Desenvolvedor Web &amp; Designer UI/UX</p>
-
-            <div class="contacts" id="contactLinks">
-              <a id="linkPhone" href="tel:+5511999999999" aria-label="Contato via WhatsApp">WhatsApp</a>
-              <a id="linkInsta" href="https://instagram.com/seuuser" aria-label="Perfil no Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a id="linkSite" href="https://seusite.dev" aria-label="Acessar portfólio" target="_blank" rel="noopener noreferrer">Portfólio</a>
-              <a id="linkLinkedin" href="https://linkedin.com/in/seuuser" aria-label="Perfil no LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
-
-            <div class="actions">
-              <button class="btn" id="btnSaveImg" aria-label="Baixar cartão como imagem">📥 Baixar Card</button>
-              <button class="btn" id="btnShare" aria-label="Compartilhar cartão digital">📤 Compartilhar</button>
-            </div>
-
-            <form id="contactForm" action="https://formspree.io/f/mayvlpqq" method="POST">
-              <fieldset>
-                <legend style="display: none;">Formulário de Contato</legend>
-                <input type="text" name="nome" placeholder="Seu nome" required aria-label="Digite seu nome" />
-                <input type="email" name="email" placeholder="Seu email" required aria-label="Digite seu email" />
-                <textarea name="mensagem" placeholder="Sua mensagem" aria-label="Digite sua mensagem"></textarea>
-                <button type="submit">Enviar mensagem</button>
-              </fieldset>
-            </form>
-
-            <footer>
-              <p class="footer-note">Cartão Digital Interativo — Desenvolvedor Web &amp; UI/UX Designer</p>
-            </footer>
-          </div>
-        </div>
-      </div>
+  <!-- ========== LOADER ========== -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-circle"></div>
+      <p class="loader-text">Carregando...</p>
     </div>
   </div>
 
+  <!-- ========== HEADER / NAVIGATION ========== -->
+  <header id="header" class="header">
+    <div class="container header-inner">
+      <!-- Logo -->
+      <a href="#hero" class="logo">
+        <!-- INSIRA SUA LOGO AQUI -->
+        <div class="logo-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <span class="logo-text">Jefferson<span class="text-accent">Dev</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop" id="navDesktop">
+        <a href="#hero" class="nav-link active">Inicio</a>
+        <a href="#about" class="nav-link">Sobre</a>
+        <a href="#services" class="nav-link">Servicos</a>
+        <a href="#skills" class="nav-link">Habilidades</a>
+        <a href="#projects" class="nav-link">Projetos</a>
+        <a href="#certificates" class="nav-link">Certificados</a>
+        <a href="#contact" class="nav-link">Contato</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Alternar tema">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <button id="menuToggle" class="btn-icon mobile-only" aria-label="Abrir menu">
+          <i class="fas fa-bars" id="menuIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="nav-mobile" id="navMobile">
+      <a href="#hero" class="nav-link active" onclick="closeMobileMenu()">Inicio</a>
+      <a href="#about" class="nav-link" onclick="closeMobileMenu()">Sobre</a>
+      <a href="#services" class="nav-link" onclick="closeMobileMenu()">Servicos</a>
+      <a href="#skills" class="nav-link" onclick="closeMobileMenu()">Habilidades</a>
+      <a href="#projects" class="nav-link" onclick="closeMobileMenu()">Projetos</a>
+      <a href="#certificates" class="nav-link" onclick="closeMobileMenu()">Certificados</a>
+      <a href="#contact" class="nav-link" onclick="closeMobileMenu()">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ========== HERO SECTION ========== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-effects">
+        <div class="hero-gradient-orb orb-1"></div>
+        <div class="hero-gradient-orb orb-2"></div>
+        <div class="hero-particles" id="particles"></div>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Disponivel para novos projetos
+          </div>
+          <h1 class="hero-title">
+            Ola, eu sou <br />
+            <span class="text-gradient">Jefferson Goncalves</span>
+          </h1>
+          <p class="hero-subtitle">
+            <span id="typedText"></span><span class="typed-cursor">|</span>
+          </p>
+          <p class="hero-description">
+            Transformo ideias em experiencias digitais incriveis. Especialista em desenvolvimento web, design grafico e UI/UX.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary btn-glow">
+              <i class="fas fa-briefcase"></i> Ver Projetos
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fas fa-envelope"></i> Fale Comigo
+            </a>
+          </div>
+          <div class="hero-social">
+            <!-- INSIRA SEUS LINKS DE REDES SOCIAIS -->
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Behance" class="social-link">
+              <i class="fab fa-behance"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-link">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="profile-card">
+            <div class="profile-card-glow"></div>
+            <div class="profile-avatar">
+              <!-- INSIRA SUA FOTO DE PERFIL AQUI (substitua o src) -->
+              <img src="image/fotoperfil.jpg" alt="Foto de Jefferson Goncalves" />
+            </div>
+            <div class="profile-info">
+              <h3>Jefferson Goncalves</h3>
+              <p>Desenvolvedor Web & Designer UI/UX</p>
+            </div>
+            <div class="profile-stats">
+              <div class="stat">
+                <span class="stat-number" data-count="50">0</span>+
+                <span class="stat-label">Projetos</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-count="30">0</span>+
+                <span class="stat-label">Clientes</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-count="5">0</span>+
+                <span class="stat-label">Anos Exp.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Rolar para baixo">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Sobre Mim</span>
+          <h2 class="section-title">Quem sou eu</h2>
+          <p class="section-subtitle">Conheca um pouco da minha trajetoria e paixao pelo design e desenvolvimento</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image" data-aos="fade-right" data-aos-delay="100">
+            <div class="about-img-wrapper">
+              <!-- INSIRA SUA FOTO AQUI -->
+              <img src="image/fotoperfil.jpg" alt="Jefferson Goncalves - Sobre" />
+              <div class="about-img-decoration"></div>
+            </div>
+            <div class="about-experience-badge">
+              <span class="exp-number">5+</span>
+              <span class="exp-text">Anos de<br/>Experiencia</span>
+            </div>
+          </div>
+
+          <div class="about-content" data-aos="fade-left" data-aos-delay="200">
+            <h3>Desenvolvedor Web & Designer Criativo</h3>
+            <p>
+              Sou um profissional apaixonado por criar solucoes digitais que combinam estetica e funcionalidade. 
+              Com experiencia em desenvolvimento web frontend e design grafico/UI-UX, transformo conceitos em 
+              produtos digitais que geram resultados.
+            </p>
+            <p>
+              Minha abordagem une pensamento criativo com habilidades tecnicas, garantindo que cada projeto 
+              entregue nao apenas atenda, mas supere as expectativas dos clientes.
+            </p>
+
+            <div class="about-details">
+              <div class="detail-item">
+                <i class="fas fa-user"></i>
+                <div>
+                  <strong>Nome:</strong>
+                  <span>Jefferson Goncalves</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <!-- INSIRA SEU E-MAIL -->
+                  <strong>Email:</strong>
+                  <span>seuemail@email.com</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <strong>Localizacao:</strong>
+                  <span>Brasil</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <strong>Disponibilidade:</strong>
+                  <span>Freelancer / CLT / PJ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-cta">
+              <a href="#contact" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> Entre em Contato
+              </a>
+              <a href="#" class="btn btn-outline" download>
+                <i class="fas fa-download"></i> Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION ========== -->
+    <section id="services" class="section section-alt">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Servicos</span>
+          <h2 class="section-title">O que eu faco</h2>
+          <p class="section-subtitle">Solucoes completas para transformar sua presenca digital</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Desenvolvimento Web</h3>
+            <p>Sites responsivos, landing pages, e-commerces e aplicacoes web modernas com as melhores tecnologias do mercado.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> HTML5, CSS3, JavaScript</li>
+              <li><i class="fas fa-check"></i> React, TypeScript</li>
+              <li><i class="fas fa-check"></i> Sites Responsivos</li>
+              <li><i class="fas fa-check"></i> Performance Otimizada</li>
+            </ul>
+          </div>
+
+          <div class="service-card featured" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-badge">Popular</div>
+            <div class="service-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3>Design Grafico</h3>
+            <p>Identidade visual, logotipos, materiais graficos e criacoes visuais que comunicam a essencia da sua marca.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Identidade Visual</li>
+              <li><i class="fas fa-check"></i> Logotipos e Branding</li>
+              <li><i class="fas fa-check"></i> Material para Redes Sociais</li>
+              <li><i class="fas fa-check"></i> Material Impresso</li>
+            </ul>
+          </div>
+
+          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-icon">
+              <i class="fas fa-pen-nib"></i>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>Interfaces intuitivas e experiencias centradas no usuario que aumentam conversao e engajamento.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> UX Research</li>
+              <li><i class="fas fa-check"></i> Wireframes e Prototipos</li>
+              <li><i class="fas fa-check"></i> Design Systems</li>
+              <li><i class="fas fa-check"></i> Figma Avancado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS SECTION ========== -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Habilidades</span>
+          <h2 class="section-title">Minhas Competencias</h2>
+          <p class="section-subtitle">Tecnologias e ferramentas que domino para entregar resultados excepcionais</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Dev Skills -->
+          <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+            <h3><i class="fas fa-laptop-code"></i> Desenvolvimento</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>HTML5</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-progress="95"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>CSS3 / Tailwind</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>JavaScript</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>React / TypeScript</span>
+                  <span>80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Git / GitHub</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Design Skills -->
+          <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+            <h3><i class="fas fa-paint-brush"></i> Design</h3>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Figma</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Photoshop</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Illustrator</span>
+                  <span>80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>UI/UX Design</span>
+                  <span>88%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Design Systems</span>
+                  <span>82%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" data-progress="82"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech Icons -->
+        <div class="tech-marquee" data-aos="fade-up" data-aos-delay="300">
+          <div class="marquee-track">
+            <div class="marquee-content">
+              <span class="tech-badge"><i class="fab fa-html5"></i> HTML5</span>
+              <span class="tech-badge"><i class="fab fa-css3-alt"></i> CSS3</span>
+              <span class="tech-badge"><i class="fab fa-js-square"></i> JavaScript</span>
+              <span class="tech-badge"><i class="fab fa-react"></i> React</span>
+              <span class="tech-badge"><i class="fab fa-figma"></i> Figma</span>
+              <span class="tech-badge"><i class="fab fa-git-alt"></i> Git</span>
+              <span class="tech-badge"><i class="fab fa-github"></i> GitHub</span>
+              <span class="tech-badge"><i class="fab fa-node-js"></i> Node.js</span>
+              <span class="tech-badge"><i class="fas fa-wind"></i> Tailwind</span>
+              <span class="tech-badge"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+              <span class="tech-badge"><i class="fas fa-database"></i> SQL</span>
+              <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+              <span class="tech-badge"><i class="fab fa-html5"></i> HTML5</span>
+              <span class="tech-badge"><i class="fab fa-css3-alt"></i> CSS3</span>
+              <span class="tech-badge"><i class="fab fa-js-square"></i> JavaScript</span>
+              <span class="tech-badge"><i class="fab fa-react"></i> React</span>
+              <span class="tech-badge"><i class="fab fa-figma"></i> Figma</span>
+              <span class="tech-badge"><i class="fab fa-git-alt"></i> Git</span>
+              <span class="tech-badge"><i class="fab fa-github"></i> GitHub</span>
+              <span class="tech-badge"><i class="fab fa-node-js"></i> Node.js</span>
+              <span class="tech-badge"><i class="fas fa-wind"></i> Tailwind</span>
+              <span class="tech-badge"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+              <span class="tech-badge"><i class="fas fa-database"></i> SQL</span>
+              <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS SECTION ========== -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Portfolio</span>
+          <h2 class="section-title">Meus Projetos</h2>
+          <p class="section-subtitle">Explore meus trabalhos divididos por categoria</p>
+        </div>
+
+        <!-- Project Filters -->
+        <div class="project-filters" data-aos="fade-up" data-aos-delay="100">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="clients">Clientes</button>
+          <button class="filter-btn" data-filter="academic">Academicos & Pessoais</button>
+          <button class="filter-btn" data-filter="design">Design Grafico & UI/UX</button>
+          <button class="filter-btn" data-filter="games">Jogos</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- ===== PROJETOS CLIENTES ===== -->
+          <div class="project-card" data-category="clients" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image">
+              <!-- INSIRA A IMAGEM DO PROJETO -->
+              <img src="image/projeto1.jpg" alt="Projeto Cliente 1" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <!-- INSIRA O LINK DO PROJETO -->
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver projeto">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <!-- INSIRA O LINK DO REPOSITORIO -->
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver codigo">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category">Cliente</span>
+              <h3>Projeto Cliente 1</h3>
+              <p>Descricao breve do projeto para o cliente.</p>
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="clients" data-aos="fade-up" data-aos-delay="150">
+            <div class="project-image">
+              <!-- INSIRA A IMAGEM DO PROJETO -->
+              <img src="image/projeto2.jpg" alt="Projeto Cliente 2" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver projeto">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver codigo">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category">Cliente</span>
+              <h3>Projeto Cliente 2</h3>
+              <p>Descricao breve do projeto para o cliente.</p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Tailwind</span>
+                <span>TypeScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="clients" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image">
+              <!-- INSIRA A IMAGEM DO PROJETO -->
+              <img src="image/projeto3.jpg" alt="Projeto Cliente 3" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver projeto">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver codigo">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category">Cliente</span>
+              <h3>Projeto Cliente 3</h3>
+              <p>Descricao breve do projeto para o cliente.</p>
+              <div class="project-tech">
+                <span>Figma</span>
+                <span>HTML</span>
+                <span>CSS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== PROJETOS ACADEMICOS & PESSOAIS ===== -->
+          <div class="project-card" data-category="academic" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image">
+              <!-- INSIRA A IMAGEM DO PROJETO -->
+              <img src="image/projeto1.jpg" alt="Projeto Academico 1" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver projeto">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver codigo">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category category-academic">Academico</span>
+              <h3>Projeto Academico 1</h3>
+              <p>Descricao breve do projeto academico ou pessoal.</p>
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="academic" data-aos="fade-up" data-aos-delay="150">
+            <div class="project-image">
+              <!-- INSIRA A IMAGEM DO PROJETO -->
+              <img src="image/projeto2.jpg" alt="Projeto Academico 2" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver projeto">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver codigo">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category category-academic">Pessoal</span>
+              <h3>Projeto Pessoal 1</h3>
+              <p>Descricao breve do projeto pessoal.</p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Node.js</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="academic" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image">
+              <!-- INSIRA A IMAGEM DO PROJETO -->
+              <img src="image/projeto3.jpg" alt="Projeto Academico 3" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver projeto">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver codigo">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category category-academic">Academico</span>
+              <h3>Projeto Academico 2</h3>
+              <p>Descricao breve do projeto academico.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>SQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== PROJETOS DESIGN GRAFICO & UI/UX ===== -->
+          <div class="project-card" data-category="design" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image">
+              <!-- INSIRA A IMAGEM DO PROJETO -->
+              <img src="image/projeto1.jpg" alt="Projeto Design 1" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver no Behance">
+                    <i class="fab fa-behance"></i>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver projeto">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category category-design">Design Grafico</span>
+              <h3>Identidade Visual</h3>
+              <p>Descricao breve do projeto de design grafico.</p>
+              <div class="project-tech">
+                <span>Photoshop</span>
+                <span>Illustrator</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="design" data-aos="fade-up" data-aos-delay="150">
+            <div class="project-image">
+              <!-- INSIRA A IMAGEM DO PROJETO -->
+              <img src="image/projeto2.jpg" alt="Projeto UI/UX 1" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver no Behance">
+                    <i class="fab fa-behance"></i>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver prototipo">
+                    <i class="fab fa-figma"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category category-design">UI/UX Design</span>
+              <h3>App Mobile UI</h3>
+              <p>Descricao breve do projeto de UI/UX design.</p>
+              <div class="project-tech">
+                <span>Figma</span>
+                <span>UI Design</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="design" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image">
+              <!-- INSIRA A IMAGEM DO PROJETO -->
+              <img src="image/projeto3.jpg" alt="Projeto Design 2" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver no Behance">
+                    <i class="fab fa-behance"></i>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver projeto">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category category-design">Design Grafico</span>
+              <h3>Social Media Pack</h3>
+              <p>Descricao breve do projeto de social media.</p>
+              <div class="project-tech">
+                <span>Photoshop</span>
+                <span>Canva</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== PROJETOS JOGOS ===== -->
+          <div class="project-card" data-category="games" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-image">
+              <!-- INSIRA A IMAGEM DO PROJETO -->
+              <img src="image/projeto1.jpg" alt="Jogo 1" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Jogar">
+                    <i class="fas fa-gamepad"></i>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver codigo">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category category-games">Jogo</span>
+              <h3>Jogo Web 1</h3>
+              <p>Descricao breve do jogo desenvolvido.</p>
+              <div class="project-tech">
+                <span>JavaScript</span>
+                <span>Canvas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="games" data-aos="fade-up" data-aos-delay="150">
+            <div class="project-image">
+              <!-- INSIRA A IMAGEM DO PROJETO -->
+              <img src="image/projeto2.jpg" alt="Jogo 2" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Jogar">
+                    <i class="fas fa-gamepad"></i>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver codigo">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category category-games">Jogo</span>
+              <h3>Jogo Web 2</h3>
+              <p>Descricao breve do jogo desenvolvido.</p>
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="games" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-image">
+              <!-- INSIRA A IMAGEM DO PROJETO -->
+              <img src="image/projeto3.jpg" alt="Jogo 3" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Jogar">
+                    <i class="fas fa-gamepad"></i>
+                  </a>
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver codigo">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-category category-games">Jogo</span>
+              <h3>Jogo Web 3</h3>
+              <p>Descricao breve do jogo desenvolvido.</p>
+              <div class="project-tech">
+                <span>JavaScript</span>
+                <span>WebGL</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CERTIFICATES SECTION ========== -->
+    <section id="certificates" class="section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Formacao</span>
+          <h2 class="section-title">Certificados & Formacoes</h2>
+          <p class="section-subtitle">Minhas qualificacoes e certificacoes profissionais</p>
+        </div>
+
+        <div class="certificates-grid">
+          <!-- INSIRA SEUS CERTIFICADOS AQUI (duplique os cards conforme necessario) -->
+          <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="certificate-image">
+              <!-- INSIRA A IMAGEM DO CERTIFICADO -->
+              <img src="image/projeto1.jpg" alt="Certificado 1" />
+              <div class="certificate-overlay">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                  <i class="fas fa-external-link-alt"></i> Ver Certificado
+                </a>
+              </div>
+            </div>
+            <div class="certificate-info">
+              <h3>Nome do Curso / Certificacao</h3>
+              <p class="certificate-issuer"><i class="fas fa-university"></i> Nome da Instituicao</p>
+              <p class="certificate-date"><i class="fas fa-calendar-alt"></i> 2024</p>
+            </div>
+          </div>
+
+          <div class="certificate-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="certificate-image">
+              <!-- INSIRA A IMAGEM DO CERTIFICADO -->
+              <img src="image/projeto2.jpg" alt="Certificado 2" />
+              <div class="certificate-overlay">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                  <i class="fas fa-external-link-alt"></i> Ver Certificado
+                </a>
+              </div>
+            </div>
+            <div class="certificate-info">
+              <h3>Nome do Curso / Certificacao</h3>
+              <p class="certificate-issuer"><i class="fas fa-university"></i> Nome da Instituicao</p>
+              <p class="certificate-date"><i class="fas fa-calendar-alt"></i> 2024</p>
+            </div>
+          </div>
+
+          <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="certificate-image">
+              <!-- INSIRA A IMAGEM DO CERTIFICADO -->
+              <img src="image/projeto3.jpg" alt="Certificado 3" />
+              <div class="certificate-overlay">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                  <i class="fas fa-external-link-alt"></i> Ver Certificado
+                </a>
+              </div>
+            </div>
+            <div class="certificate-info">
+              <h3>Nome do Curso / Certificacao</h3>
+              <p class="certificate-issuer"><i class="fas fa-university"></i> Nome da Instituicao</p>
+              <p class="certificate-date"><i class="fas fa-calendar-alt"></i> 2023</p>
+            </div>
+          </div>
+
+          <div class="certificate-card" data-aos="fade-up" data-aos-delay="250">
+            <div class="certificate-image">
+              <!-- INSIRA A IMAGEM DO CERTIFICADO -->
+              <img src="image/projeto1.jpg" alt="Certificado 4" />
+              <div class="certificate-overlay">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                  <i class="fas fa-external-link-alt"></i> Ver Certificado
+                </a>
+              </div>
+            </div>
+            <div class="certificate-info">
+              <h3>Nome do Curso / Certificacao</h3>
+              <p class="certificate-issuer"><i class="fas fa-university"></i> Nome da Instituicao</p>
+              <p class="certificate-date"><i class="fas fa-calendar-alt"></i> 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Contato</span>
+          <h2 class="section-title">Vamos Conversar?</h2>
+          <p class="section-subtitle">Tem um projeto em mente? Estou pronto para ajudar a transformar suas ideias em realidade</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info -->
+          <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h3>Email</h3>
+                <!-- INSIRA SEU E-MAIL -->
+                <a href="mailto:seuemail@email.com">seuemail@email.com</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div>
+                <h3>WhatsApp</h3>
+                <!-- INSIRA SEU TELEFONE -->
+                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">+55 (11) 99999-9999</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h3>Localizacao</h3>
+                <p>Brasil</p>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="contact-social">
+              <h3>Redes Sociais</h3>
+              <div class="social-links-grid">
+                <!-- INSIRA SEUS LINKS -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="GitHub">
+                  <i class="fab fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="Behance">
+                  <i class="fab fa-behance"></i>
+                  <span>Behance</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="YouTube">
+                  <i class="fab fa-youtube"></i>
+                  <span>YouTube</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                  <span>Instagram</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper" data-aos="fade-left" data-aos-delay="200">
+            <form id="contactForm" action="https://formspree.io/f/mayvlpqq" method="POST" class="contact-form">
+              <div class="form-group">
+                <label for="name">Nome completo</label>
+                <input type="text" id="name" name="nome" placeholder="Seu nome" required aria-label="Seu nome" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required aria-label="Seu email" />
+              </div>
+              <div class="form-group">
+                <label for="subject">Assunto</label>
+                <select id="subject" name="assunto" required>
+                  <option value="">Selecione um assunto</option>
+                  <option value="desenvolvimento-web">Desenvolvimento Web</option>
+                  <option value="design-grafico">Design Grafico</option>
+                  <option value="ui-ux-design">UI/UX Design</option>
+                  <option value="orcamento">Solicitar Orcamento</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="mensagem" placeholder="Conte-me sobre seu projeto..." rows="5" required aria-label="Sua mensagem"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full btn-glow">
+                <i class="fas fa-paper-plane"></i> Enviar Mensagem
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">
+            <div class="logo-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <span class="logo-text">Jefferson<span class="text-accent">Dev</span></span>
+          </a>
+          <p>Transformando ideias em experiencias digitais incriveis. Desenvolvimento web, design grafico e UI/UX.</p>
+          <div class="footer-social">
+            <!-- INSIRA SEUS LINKS -->
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Behance"><i class="fab fa-behance"></i></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navegacao</h4>
+          <ul>
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#services">Servicos</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Servicos</h4>
+          <ul>
+            <li><a href="#services">Desenvolvimento Web</a></li>
+            <li><a href="#services">Design Grafico</a></li>
+            <li><a href="#services">UI/UX Design</a></li>
+            <li><a href="#services">Consultoria</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Contato</h4>
+          <ul>
+            <!-- INSIRA SEUS LINKS -->
+            <li><a href="mailto:seuemail@email.com">seuemail@email.com</a></li>
+            <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Jefferson Goncalves. Todos os direitos reservados.</p>
+        <p>Desenvolvido com <i class="fas fa-heart" style="color: var(--accent);"></i> por Jefferson Goncalves</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- AOS Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- Main Script -->
   <script src="script.js"></script>
 </body>
 </html>
